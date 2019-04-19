@@ -8,7 +8,7 @@ class Application
       @@items.each do |item|
       resp.write "#{item.price}"
       end
-    else
+    elsif !req.path.match(/items/)
       resp.write "Route not found"
       resp.status = 404
     end
